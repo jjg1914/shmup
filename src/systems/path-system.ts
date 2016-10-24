@@ -1,8 +1,7 @@
-import Engine, { Entity } from "../engine/engine";
-import { Event } from "../engine/interval";
+import { Engine, Entity, IntervalEvent } from "mu-engine";
 
 export default function PathSystem(engine: Engine,
-                                   event: Event ): Engine {
+                                   event: IntervalEvent ): Engine {
   return engine.runIterator([ "position", "movement" ],
                             (memo: Engine, entity: Entity): Engine => {
     let path = entity.getIn([ "movement", "path" ]);

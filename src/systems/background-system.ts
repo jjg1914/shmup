@@ -1,6 +1,6 @@
-import { Event } from "../engine/render";
+import { RenderEvent } from "mu-engine";
 
-export default function RenderSystem(event: Event): void {
+export default function RenderSystem(event: RenderEvent): void {
   event.ctx.fillStyle = "#282828";
   event.ctx.strokeStyle = "#005399";
   event.ctx.fillRect(0, 0, event.width, event.height);

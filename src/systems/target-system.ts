@@ -1,4 +1,4 @@
-import Engine, { Entity } from "../engine/engine";
+import { Engine, Entity } from "mu-engine";
 
 export default function TargetSystem(engine: Engine): Engine {
   return engine.runIterator([ "target" ], (value: Engine,

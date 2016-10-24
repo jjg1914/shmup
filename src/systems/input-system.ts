@@ -1,16 +1,17 @@
-import Engine, { Entity } from "../engine/engine";
-import { Keys, EventType, Event } from "../engine/input";
+import {
+  Engine, Entity, InputKeys, InputEventType, InputEvent
+} from "mu-engine";
 
 export default function InputSystem(engine: Engine,
                                     entity: Entity,
-                                    event: Event): Engine {
+                                    event: InputEvent): Engine {
   let coeff = 0;
 
   switch (event.type) {
-    case EventType.KEY_UP:
+    case InputEventType.KEY_UP:
       coeff = -1;
       break;
-    case EventType.KEY_DOWN:
+    case InputEventType.KEY_DOWN:
       coeff = 1;
       break;
     default:
@@ -21,16 +22,16 @@ export default function InputSystem(engine: Engine,
   let ySpeed = entity.getIn([ "movement", "ySpeed" ]);
 
   switch (event.which) {
-    case Keys.ARROW_LEFT:
+    case InputKeys.ARROW_LEFT:
       xSpeed += -64 * coeff;
       break;
-    case Keys.ARROW_RIGHT:
+    case InputKeys.ARROW_RIGHT:
       xSpeed += 64 * coeff;
       break;
-    case Keys.ARROW_UP:
+    case InputKeys.ARROW_UP:
       ySpeed += -64 * coeff;
       break;
-    case Keys.ARROW_DOWN:
+    case InputKeys.ARROW_DOWN:
       ySpeed += 64 * coeff;
       break;
     default:

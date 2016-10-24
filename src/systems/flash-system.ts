@@ -1,5 +1,4 @@
-import Engine, { Entity } from "../engine/engine";
-import IO from "../engine/io";
+import { Engine, Entity, IO } from "mu-engine";
 
 export default function FlashSystem(engine: Engine,
                                     oldEngine: Engine): IO<Engine> {

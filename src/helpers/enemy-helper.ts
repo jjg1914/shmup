@@ -1,8 +1,4 @@
-import "../../typings/index.d.ts";
-
-import Engine from "../engine/engine";
-import IO from "../engine/io";
-import Path from "../engine/path";
+import { Engine, IO, Path } from "mu-engine";
 
 import BlockoidEntity from "../entities/blockoid-entity";
 

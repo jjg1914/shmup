@@ -1,6 +1,4 @@
-import Engine from "../engine/engine";
-import IO from "../engine/io";
-import Timeline from "../engine/timeline";
+import { Engine, IO, Timeline } from "mu-engine";
 
 import { Blockoid, Drone } from "../helpers/enemy-helper";
 

@@ -1,6 +1,6 @@
 import * as Immutable from "immutable";
 
-import { Polygon } from "../engine/shape";
+import { Polygon } from "mu-engine";
 
 import PositionComponent from "../components/position-component";
 import MovementComponent from "../components/movement-component";
