@@ -1,5 +1,4 @@
-import Engine, { Entity } from "../engine/engine";
-import IO from "../engine/io";
+import { Engine, Entity, IO } from "mu-engine";
 
 export function Shoot(entity: Entity): IO<Engine> {
   let impl = function(engine: Engine): IO<Engine> {

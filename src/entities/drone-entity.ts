@@ -1,7 +1,6 @@
 import * as Immutable from "immutable";
 
-import Engine, { Entity } from "../engine/engine";
-import { Circle } from "../engine/shape";
+import { Engine, Entity, Circle } from "mu-engine";
 
 import PlayerEntity from "./player-entity";
 import PositionComponent from "../components/position-component";

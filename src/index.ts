@@ -1,14 +1,11 @@
-import Runtime, { Callback } from "./engine/runtime";
-import Engine from "./engine/engine";
-import Interval from "./engine/interval";
-import Render from "./engine/render";
-import Input from "./engine/input";
-import Particle from "./engine/particle";
+import {
+  Runtime, RuntimeCallback, Engine, Interval, Render, Input, Particle
+} from "mu-engine";
 
 import Shmup from "./shmup";
 
 document.addEventListener("DOMContentLoaded", () => {
-  Runtime(Shmup(), (cb: Callback<Engine>): void => {
+  Runtime(Shmup(), (cb: RuntimeCallback<Engine>): void => {
     let stage = <HTMLCanvasElement> document.getElementById("stage");
     let renderer = Render(stage, {
       width: 208,

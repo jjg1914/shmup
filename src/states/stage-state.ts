@@ -1,8 +1,6 @@
-import Engine, { Entity } from "../engine/engine";
-import { Event as RenderEvent } from "../engine/render";
-import { Event as InputEvent } from "../engine/input";
-import { Event as IntervalEvent } from "../engine/interval";
-import IO from "../engine/io";
+import {
+  IO, Engine, Entity, RenderEvent, InputEvent, IntervalEvent
+} from "mu-engine";
 
 import PlayerEntity from "../entities/player-entity";
 
@@ -17,7 +15,7 @@ import TargetSystem from "../systems/target-system";
 import FlashSystem from "../systems/flash-system";
 import PathSystem from "../systems/path-system";
 
-import Stage1 from "../stages/stage-1.ts";
+import Stage1 from "../stages/stage-1";
 
 export default function StageState(value: Engine): IO<Engine> {
   let entity: Entity = (new PlayerEntity())

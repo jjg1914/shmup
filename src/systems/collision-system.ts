@@ -1,5 +1,4 @@
-import Engine, { Entity } from "../engine/engine";
-import Collision, { query } from "../engine/collision";
+import { Engine, Entity, Collision } from "mu-engine";
 
 export default function CollisionSystem(engine: Engine): Engine {
   let tree = Collision(engine, 208, 256);
@@ -8,7 +7,7 @@ export default function CollisionSystem(engine: Engine): Engine {
                                           entity: Entity): Engine => {
     const group = entity.getIn([ "target", "group" ]);
 
-    let collisions = query(tree, entity);
+    let collisions = tree.query(entity);
     let tmp = collisions.filter((e: Entity) => {
       return e.has("damage");
     }).reduce((m: Engine, e: Entity): Engine => {

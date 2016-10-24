@@ -1,10 +1,9 @@
 import "../poly.d.ts";
 
-import Engine, { Entity } from "../engine/engine";
-import { Event } from "../engine/render";
+import { Engine, Entity, RenderEvent } from "mu-engine";
 
 export default function RenderSystem(engine: Engine,
-                                     event: Event): void {
+                                     event: RenderEvent): void {
   engine.runIterator([ "position", "render" ],
                      (memo: Engine, entity: Entity): Engine => {
     let shape = entity.getIn([ "render", "shape" ]);

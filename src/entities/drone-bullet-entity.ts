@@ -1,6 +1,6 @@
 import * as Immutable from "immutable";
 
-import { Circle } from "../engine/shape";
+import { Circle } from "mu-engine";
 
 import PositionComponent from "../components/position-component";
 import MovementComponent from "../components/movement-component";

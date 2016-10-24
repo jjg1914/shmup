@@ -1,5 +1,4 @@
-import Engine from "./engine/engine";
-import IO from "./engine/io";
+import { Engine, IO } from "mu-engine";
 import StageState from "./states/stage-state";
 
 export default function Shmup(): IO<Engine> {
