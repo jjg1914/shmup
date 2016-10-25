@@ -1,5 +1,3 @@
-import "../poly.d.ts";
-
 import { Engine, Entity, RenderEvent } from "mu-engine";
 
 export default function RenderSystem(engine: Engine,
