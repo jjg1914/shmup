@@ -9,7 +9,7 @@ export default function ShootSystem(engine: Engine,
                                     event: InputEvent): Engine {
   if (event.type === InputEventType.KEY_DOWN &&
       event.which === InputKeys.SPACE) {
-    let bullet = (new BulletEntity())
+    let bullet = BulletEntity()
       .setIn([ "position", "x" ], entity.getIn([ "position", "x"]) + 8.5)
       .setIn([ "position", "y" ], entity.getIn([ "position", "y"]) + 4);
     return engine.mkEntity(bullet);

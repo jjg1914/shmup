@@ -1,10 +1,10 @@
 import * as Immutable from "immutable";
 
-import { Polygon } from "mu-engine";
+import { Entity, Component, Polygon } from "mu-engine";
 
-import PositionComponent from "../components/position-component";
-import MovementComponent from "../components/movement-component";
-import RenderComponent from "../components/render-component";
+import { PositionComponent } from "mu-engine";
+import { MovementComponent } from "mu-engine";
+import { RenderComponent } from "mu-engine";
 import TargetComponent from "../components/target-component";
 
 const mask = new Polygon([
@@ -13,13 +13,15 @@ const mask = new Polygon([
   [ 10, 0 ],
 ]);
 
-export default Immutable.Record({
-  meta: undefined,
-  position: (new PositionComponent(mask.dimensions())).set("mask", mask),
-  render: new RenderComponent({
-    shape: mask.path(),
-    stroke: "#00b6E4",
-  }),
-  movement: new MovementComponent({ restict: true }),
-  target: new TargetComponent({ value: 1, group: "A" }),
-}, "PlayerEntity");
+export default function(): Entity {
+  return Immutable.Map<string,Component>({
+    meta: undefined,
+    position: (new PositionComponent(mask.dimensions())).set("mask", mask),
+    render: new RenderComponent({
+      shape: mask.path(),
+      stroke: "#00b6E4",
+    }),
+    movement: new MovementComponent({ restict: true }),
+    target: new TargetComponent({ value: 1, group: "A" }),
+  });
+}

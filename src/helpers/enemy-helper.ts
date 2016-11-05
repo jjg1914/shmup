@@ -3,11 +3,12 @@ import { Engine, IO, Path } from "mu-engine";
 import BlockoidEntity from "../entities/blockoid-entity";
 
 import DroneEntity from "../entities/drone-entity";
+import DronePath1 from "../paths/drone1-path";
 
 import { Shoot } from "./shoot-helper";
 
 export function Blockoid(engine: Engine, x: number): IO<Engine> {
-  let blockoid = (new BlockoidEntity())
+  let blockoid = BlockoidEntity()
     .setIn([ "position", "x" ], x)
     .setIn([ "position", "y" ], -20);
 
@@ -15,12 +16,11 @@ export function Blockoid(engine: Engine, x: number): IO<Engine> {
 }
 
 export function Drone(engine: Engine, x: number): IO<Engine> {
-  let drone = (new DroneEntity())
+  let drone = DroneEntity()
     .setIn([ "position", "x" ], x)
     .setIn([ "position", "y" ], -12);
-  // tslint:disable-next-line:no-require-imports
-  let path = Path(drone, require("../paths/drone1-path"));
-  drone = drone.setIn([ "movement", "path" ], path);
+  let path = Path(drone, DronePath1);
+  drone = drone.setIn([ "path", "path" ], path);
   let newEngine = engine.mkEntity(drone);
 
   return IO.Put(newEngine).bind(() => {

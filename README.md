@@ -1,8 +1,7 @@
 # shmup
 
 [![Build Status](https://travis-ci.org/jjg1914/shmup.svg?branch=master)](https://travis-ci.org/jjg1914/shmup)
-[![Coverage Status](https://coveralls.io/repos/github/jjg1914/shmup/badge.svg?branch=master)](https://coveralls.io/github/jjg1914/shmup?branch=master)
-[![Dependency Status](https://david-dm.org/jjg1914/shmup.svg)](https://david-dm.org/jjg1914/shmup)
+![Dependency Status](https://david-dm.org/jjg1914/shmup.svg)](https://david-dm.org/jjg1914/shmup)
 
 ## License
 

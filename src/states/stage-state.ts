@@ -1,24 +1,24 @@
 import {
-  IO, Engine, Entity, RenderEvent, InputEvent, IntervalEvent
+  IO, Engine, Entity, RenderEvent, InputEvent, IntervalEvent,
 } from "mu-engine";
 
 import PlayerEntity from "../entities/player-entity";
 
 import BackgroundSystem from "../systems/background-system";
-import RenderSystem from "../systems/render-system";
+import { RenderSystem } from "mu-engine";
 import InputSystem from "../systems/input-system";
 import ShootSystem from "../systems/shoot-system";
-import MovementSystem from "../systems/movement-system";
-import AnimateSystem from "../systems/animate-system";
+import { MovementSystem } from "mu-engine";
+import { AnimateSystem } from "mu-engine";
 import CollisionSystem from "../systems/collision-system";
 import TargetSystem from "../systems/target-system";
 import FlashSystem from "../systems/flash-system";
-import PathSystem from "../systems/path-system";
+import { PathSystem } from "mu-engine";
 
 import Stage1 from "../stages/stage-1";
 
 export default function StageState(value: Engine): IO<Engine> {
-  let entity: Entity = (new PlayerEntity())
+  let entity: Entity = PlayerEntity()
     .setIn([ "position", "x" ], 94)
     .setIn([ "position", "y" ], 208);
 

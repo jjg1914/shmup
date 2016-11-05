@@ -1,5 +1,5 @@
 import {
-  Runtime, RuntimeCallback, Engine, Interval, Render, Input, Particle
+  Runtime, RuntimeCallback, Engine, Interval, Render, Input, Particle,
 } from "mu-engine";
 
 import Shmup from "./shmup";

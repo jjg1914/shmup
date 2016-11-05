@@ -1,5 +1,5 @@
 import {
-  Engine, Entity, InputKeys, InputEventType, InputEvent
+  Engine, Entity, InputKeys, InputEventType, InputEvent,
 } from "mu-engine";
 
 export default function InputSystem(engine: Engine,
